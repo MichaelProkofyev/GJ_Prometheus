@@ -14,6 +14,7 @@ enum GameState
 public class GameController : MonoBehaviour {
 
     public TMPro.TextMeshProUGUI mainText;
+    public ParticleSystem particles;
 
     GameState state = GameState.QUESTION;
 
@@ -22,22 +23,23 @@ public class GameController : MonoBehaviour {
         get { return state; }
         set 
         {
+            humanRenderer.material.SetFloat("_NoiseLerp", 0);
+            particles.enableEmission = false;
             switch (value)
             {
                 case GameState.QUESTION:
-                    humanRenderer.material.SetFloat("_NoiseAmount", 0);
                     mainText.text = "Got a match?";
                     break;
                 case GameState.COMMAND:
-                    humanRenderer.material.SetFloat("_NoiseAmount", 0);
                     mainText.text = "SHED THY CLOTHES!!!";
                     break;
                 case GameState.REVEAL:
-                    humanRenderer.material.SetFloat("_NoiseAmount", 1);
+                    humanRenderer.material.SetFloat("_NoiseLerp", 1);
+                    particles.enableEmission = true;
                     mainText.text = "...";
                     break;
                 case GameState.DECISION:
-                    humanRenderer.material.SetFloat("_NoiseAmount", 0);
+
                     mainText.text = "Does he posess a match?";
                     break;
             }
@@ -51,7 +53,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        State = GameState.REVEAL;
+        State = GameState.QUESTION;
 	}
 	
 	// Update is called once per frame

@@ -81,6 +81,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
+    - _FlashPosition2: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -88,7 +89,7 @@ Material:
     - _Mode: 0
     - _NoiseAmount: 1
     - _NoiseLerp: 1
-    - _NoiseScale: 40
+    - _NoiseScale: 112
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
@@ -99,6 +100,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashPosition: {r: 0.6464392, g: 0.039164424, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _IdleColor: {r: 0.4056604, g: 0.39226595, b: 0.39226595, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
